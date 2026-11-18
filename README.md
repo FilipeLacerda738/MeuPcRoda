@@ -14,8 +14,6 @@ Aplicativo leve e portátil para Windows que identifica os componentes do comput
 
 Requer Windows 10/11 com **.NET Framework 4.8 ou 4.8.1**. O runtime é compartilhado com o Windows e não está incluído no executável. Se necessário, consulte a [instalação oficial da Microsoft](https://learn.microsoft.com/dotnet/framework/install/guide-for-developers). A consulta de jogos precisa de internet; a leitura do hardware é local.
 
-O aplicativo não precisa de instalação própria, Node.js, servidor local ou navegador embutido. Os links das lojas abrem no navegador padrão. Nenhum arquivo JSON é necessário para executar o programa.
-
 ## Funcionalidades e limites
 
 - Identificação de processador, adaptadores de vídeo, memória RAM, placa-mãe, Windows e espaço livre por unidade.
@@ -23,8 +21,6 @@ O aplicativo não precisa de instalação própria, Node.js, servidor local ou n
 - Comparação numérica de RAM e espaço. O espaço deve caber em uma unidade; discos separados não são somados.
 - CPU/GPU aprovadas somente quando o modelo corresponde a uma alternativa explícita do requisito. Modelos diferentes ficam pendentes; não há base de equivalências de desempenho nesta versão.
 - Pesquisas em KaBuM!, Amazon e Mercado Livre a partir de requisitos específicos. São links de pesquisa, sem preços, vendedores ou compatibilidade de compra validados.
-
-A análise não confirma que o jogo rodará enquanto houver itens pendentes. Windows, DirectX, recursos gráficos, fonte, conectores e dimensões do gabinete precisam de revisão. Não há estimativas de FPS. Os endpoints públicos da Steam podem mudar ou ficar indisponíveis; alguns jogos não informam requisitos completos.
 
 ## Privacidade
 
@@ -49,8 +45,6 @@ $report = Join-Path $env:TEMP 'MeuPcRoda-integracao.json'
 $process = Start-Process .\release\MeuPcRoda.exe -ArgumentList '--integration-test', ('"' + $report + '"') -Wait -PassThru
 Get-Content -LiteralPath $report
 ```
-
-O relatório é apenas um diagnóstico opcional e pode ser apagado depois. O empacotamento usa um relatório temporário, removido automaticamente. Nenhum relatório JSON é incluído nos pacotes.
 
 ## Estrutura e contribuições
 
