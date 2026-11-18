@@ -1,0 +1,44 @@
+MEUPCRODA — VERSÃO 1.0 PARA WINDOWS
+
+COMO ABRIR
+Extraia o ZIP e dê dois cliques em MeuPcRoda.exe.
+O arquivo EXE também pode ser usado sozinho, sem esta pasta do projeto.
+Não precisa de instalação do aplicativo, Node.js, terminal ou navegador para abrir.
+
+REQUISITOS
+Windows 10 ou 11 com .NET Framework 4.8 ou 4.8.1.
+Esse componente é compartilhado com o Windows e não está incluído no EXE.
+Se necessário, consulte a instalação oficial da Microsoft:
+https://learn.microsoft.com/dotnet/framework/install/guide-for-developers
+Internet é necessária para pesquisar jogos e consultar requisitos na Steam.
+
+COMO USAR
+1. Clique em Analisar meu computador para identificar suas peças.
+2. Digite o nome do jogo e pressione Enter ou clique em Buscar.
+3. Selecione o jogo e escolha os requisitos mínimos ou recomendados.
+4. Confira o resultado de cada componente e as orientações abaixo.
+
+COMO INTERPRETAR
+RAM e espaço são comparados pela quantidade. Processador e placa de vídeo
+só são aprovados quando o modelo coincide com um requisito explícito.
+Modelos diferentes, Windows, DirectX e recursos gráficos exigem revisão.
+Não há promessa de FPS nem confirmação de desempenho com itens pendentes.
+
+As lojas recebem somente a pesquisa quando você abre um dos links.
+Os links não são ofertas ou recomendações de compra verificadas.
+Antes de comprar, confirme fonte, conectores, gabinete, placa-mãe,
+tipo de memória, vendedor, condição do produto e garantia.
+
+PRIVACIDADE
+Não acessa seus arquivos pessoais, contas ou números de série.
+O inventário fica na sessão e não é enviado à Steam nem salvo em disco.
+Não inicia com o Windows, não instala serviços e encerra ao fechar a janela.
+
+Esta é uma versão inicial portátil, sem assinatura digital de distribuição.
+
+CODIGO ABERTO
+O codigo do MeuPcRoda e distribuido sob a licenca MIT, incluida em LICENSE.
+O pacote MeuPcRoda-Codigo-Fonte.zip contem o codigo e os scripts para compilar.
+Consulte SECURITY.md no codigo-fonte para entender os acessos do programa.
+Repositorio oficial: https://github.com/FilipeLacerda738/MeuPcRoda
+Hashes ajudam a conferir integridade, mas nao garantem a seguranca do arquivo.

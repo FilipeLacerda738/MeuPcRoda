@@ -1,0 +1,85 @@
+<Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Title="MeuPcRoda" Width="1160" Height="820" MinWidth="880" MinHeight="640" WindowStartupLocation="CenterScreen" Background="#0D1015" Foreground="#F2F5F9" FontFamily="Segoe UI" FontSize="14" UseLayoutRounding="True" TextOptions.TextFormattingMode="Display">
+  <Window.Resources>
+    <SolidColorBrush x:Key="Accent" Color="#C2F76A"/>
+    <SolidColorBrush x:Key="Muted" Color="#A2ADBD"/>
+    <Style TargetType="TextBlock"><Setter Property="TextWrapping" Value="Wrap"/></Style>
+    <Style TargetType="Button">
+      <Setter Property="Foreground" Value="#E7ECF3"/><Setter Property="Background" Value="#202630"/><Setter Property="BorderBrush" Value="#343D49"/><Setter Property="BorderThickness" Value="1"/><Setter Property="Padding" Value="16,11"/><Setter Property="Cursor" Value="Hand"/><Setter Property="HorizontalContentAlignment" Value="Center"/><Setter Property="VerticalContentAlignment" Value="Center"/>
+      <Setter Property="Template"><Setter.Value><ControlTemplate TargetType="Button"><Border x:Name="Surface" CornerRadius="9" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Padding="{TemplateBinding Padding}"><ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/></Border><ControlTemplate.Triggers><Trigger Property="IsMouseOver" Value="True"><Setter TargetName="Surface" Property="BorderBrush" Value="#C2F76A"/></Trigger><Trigger Property="IsKeyboardFocused" Value="True"><Setter TargetName="Surface" Property="BorderBrush" Value="#C2F76A"/><Setter TargetName="Surface" Property="BorderThickness" Value="2"/></Trigger><Trigger Property="IsPressed" Value="True"><Setter TargetName="Surface" Property="Opacity" Value="0.75"/></Trigger><Trigger Property="IsEnabled" Value="False"><Setter TargetName="Surface" Property="Opacity" Value="0.5"/></Trigger></ControlTemplate.Triggers></ControlTemplate></Setter.Value></Setter>
+    </Style>
+    <Style x:Key="Primary" TargetType="Button" BasedOn="{StaticResource {x:Type Button}}"><Setter Property="Background" Value="{StaticResource Accent}"/><Setter Property="BorderBrush" Value="{StaticResource Accent}"/><Setter Property="Foreground" Value="#15200C"/><Setter Property="FontWeight" Value="SemiBold"/></Style>
+    <Style x:Key="Card" TargetType="Border"><Setter Property="Background" Value="#151A21"/><Setter Property="BorderBrush" Value="#29313C"/><Setter Property="BorderThickness" Value="1"/><Setter Property="CornerRadius" Value="14"/><Setter Property="Padding" Value="24"/></Style>
+    <Style x:Key="Caption" TargetType="TextBlock" BasedOn="{StaticResource {x:Type TextBlock}}"><Setter Property="Foreground" Value="{StaticResource Muted}"/><Setter Property="FontSize" Value="13"/><Setter Property="LineHeight" Value="21"/></Style>
+    <Style TargetType="TextBox"><Setter Property="Foreground" Value="#F2F5F9"/><Setter Property="Background" Value="Transparent"/><Setter Property="BorderThickness" Value="0"/><Setter Property="CaretBrush" Value="#C2F76A"/><Setter Property="SelectionBrush" Value="#537332"/><Setter Property="VerticalContentAlignment" Value="Center"/><Setter Property="Padding" Value="14,12"/><Setter Property="FontSize" Value="16"/></Style>
+    <Style TargetType="ToolTip"><Setter Property="Background" Value="#242C36"/><Setter Property="Foreground" Value="#F2F5F9"/></Style>
+    <Style TargetType="Expander"><Setter Property="Foreground" Value="#A2ADBD"/><Setter Property="HorizontalContentAlignment" Value="Stretch"/></Style>
+    <Style TargetType="ScrollBar">
+      <Setter Property="Width" Value="12"/><Setter Property="Background" Value="Transparent"/>
+      <Setter Property="Template"><Setter.Value><ControlTemplate TargetType="ScrollBar"><Grid Background="Transparent"><Track x:Name="PART_Track" IsDirectionReversed="True" Orientation="Vertical" Minimum="{TemplateBinding Minimum}" Maximum="{TemplateBinding Maximum}" Value="{TemplateBinding Value}" ViewportSize="{TemplateBinding ViewportSize}"><Track.DecreaseRepeatButton><RepeatButton Command="ScrollBar.PageUpCommand" Opacity="0" Focusable="False"/></Track.DecreaseRepeatButton><Track.Thumb><Thumb><Thumb.Template><ControlTemplate TargetType="Thumb"><Border x:Name="Grip" Background="#465260" CornerRadius="4" Margin="3,1"/><ControlTemplate.Triggers><Trigger Property="IsMouseOver" Value="True"><Setter TargetName="Grip" Property="Background" Value="#7C8A9A"/></Trigger></ControlTemplate.Triggers></ControlTemplate></Thumb.Template></Thumb></Track.Thumb><Track.IncreaseRepeatButton><RepeatButton Command="ScrollBar.PageDownCommand" Opacity="0" Focusable="False"/></Track.IncreaseRepeatButton></Track></Grid></ControlTemplate></Setter.Value></Setter>
+    </Style>
+  </Window.Resources>
+  <Grid>
+    <Grid.RowDefinitions><RowDefinition Height="76"/><RowDefinition Height="*"/><RowDefinition Height="36"/></Grid.RowDefinitions>
+    <Border BorderBrush="#252D37" BorderThickness="0,0,0,1" Padding="28,0">
+      <Grid><StackPanel Orientation="Horizontal" VerticalAlignment="Center"><Border Background="{StaticResource Accent}" CornerRadius="10" Width="42" Height="42" Margin="0,0,12,0"><TextBlock Text="M↗" Foreground="#15200C" FontSize="21" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/></Border><TextBlock Text="meu" FontSize="24" FontWeight="Bold" VerticalAlignment="Center"/><TextBlock Text="pc" Foreground="{StaticResource Accent}" FontSize="24" FontWeight="Bold" VerticalAlignment="Center"/><TextBlock Text="roda" FontSize="24" FontWeight="Bold" VerticalAlignment="Center"/></StackPanel><TextBlock HorizontalAlignment="Right" VerticalAlignment="Center" Foreground="{StaticResource Muted}" FontSize="12" Text="CONHEÇA. COMPARE. JOGUE."/></Grid>
+    </Border>
+    <Grid Grid.Row="1" Margin="28,24,28,0">
+      <Grid.ColumnDefinitions><ColumnDefinition Width="276"/><ColumnDefinition Width="24"/><ColumnDefinition Width="*"/></Grid.ColumnDefinitions>
+      <Border Style="{StaticResource Card}" Padding="22" Margin="0,0,0,18">
+        <DockPanel LastChildFill="True">
+          <StackPanel DockPanel.Dock="Top"><TextBlock Text="SEU COMPUTADOR" Foreground="{StaticResource Accent}" FontSize="11" FontWeight="SemiBold" Margin="0,0,0,12"/><TextBlock Text="O ponto de partida." FontSize="22" FontWeight="SemiBold" Margin="0,0,0,8"/><TextBlock Style="{StaticResource Caption}" Text="Descubra as peças do seu PC antes de escolher seu próximo jogo." Margin="0,0,0,22"/>
+            <Button x:Name="DetectButton" Style="{StaticResource Primary}" Content="Analisar meu computador  ↗" AutomationProperties.Name="Analisar meu computador" Margin="0,0,0,12"/>
+            <TextBlock x:Name="HardwareStatus" Style="{StaticResource Caption}" Text="A leitura só começa quando você clicar." Margin="0,0,0,10" AutomationProperties.LiveSetting="Polite"/>
+          </StackPanel>
+          <StackPanel DockPanel.Dock="Bottom" Margin="0,16,0,0"><Border BorderBrush="#29313C" BorderThickness="0,1,0,0" Padding="0,16,0,0"><TextBlock Style="{StaticResource Caption}" FontSize="11" Text="Seus componentes ficam nesta sessão. Não acessamos seus arquivos pessoais."/></Border><Expander x:Name="ConfirmationExpander" Header="O que precisa de confirmação?" FontSize="11" Margin="0,12,0,0"><TextBlock x:Name="ConfirmationText" Style="{StaticResource Caption}" FontSize="11" Margin="0,10,0,0" Text="Fonte, conectores, espaço no gabinete e memória de vídeo precisam ser conferidos à parte."/></Expander></StackPanel>
+          <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled"><StackPanel x:Name="HardwareList"><Border Background="#1D252B" CornerRadius="12" Padding="22" Margin="0,18,0,0"><StackPanel><TextBlock Text="▦" Foreground="#C2F76A" FontSize="40"/><TextBlock Text="Vamos conhecer seu PC" FontWeight="SemiBold" Margin="0,14,0,8"/><TextBlock Style="{StaticResource Caption}" Text="Processador, placa de vídeo, memória e espaço disponível, em um só lugar."/></StackPanel></Border></StackPanel></ScrollViewer>
+        </DockPanel>
+      </Border>
+      <ScrollViewer x:Name="MainScroll" Grid.Column="2" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" Padding="0,0,8,18">
+        <StackPanel>
+          <TextBlock Text="MENOS DÚVIDA. MAIS PLAY." Foreground="{StaticResource Accent}" FontSize="11" FontWeight="SemiBold" Margin="0,0,0,10"/>
+          <TextBlock FontSize="36" FontWeight="Bold" LineHeight="42"><Run Text="Seu próximo jogo."/><LineBreak/><Run Text="Seu PC dá conta?" Foreground="#C2F76A"/></TextBlock>
+          <TextBlock Style="{StaticResource Caption}" Text="Escolha um jogo. Entenda os requisitos. Planeje seu próximo upgrade." Margin="0,12,0,24"/>
+          <Border Style="{StaticResource Card}"><StackPanel>
+            <TextBlock Text="Qual jogo você quer jogar?" FontSize="20" FontWeight="SemiBold" Margin="0,0,0,6"/>
+            <TextBlock Style="{StaticResource Caption}" Text="Pesquise jogos para Windows no catálogo da Steam." Margin="0,0,0,20"/>
+            <Label Target="{Binding ElementName=SearchInput}" Foreground="#E7ECF3" Content="Nome do jogo" Padding="0" Margin="0,0,0,8"/>
+            <Border x:Name="SearchSurface" Background="#0D1218" BorderBrush="#465260" BorderThickness="1" CornerRadius="10" Padding="5" Cursor="IBeam">
+              <Grid><Grid.ColumnDefinitions><ColumnDefinition Width="*"/><ColumnDefinition Width="Auto"/></Grid.ColumnDefinitions>
+                <Grid><TextBox x:Name="SearchInput" MinHeight="48" MaxLength="100" AutomationProperties.Name="Nome do jogo" ToolTip="Digite o nome do jogo e pressione Enter"/><TextBlock x:Name="SearchPlaceholder" Text="Ex.: Cyberpunk 2077" Foreground="#8996A8" Margin="14,0" VerticalAlignment="Center" IsHitTestVisible="False"/></Grid>
+                <Button x:Name="SearchButton" Grid.Column="1" Style="{StaticResource Primary}" Content="Buscar  →" MinWidth="100" AutomationProperties.Name="Buscar jogos"/>
+              </Grid>
+            </Border>
+            <TextBlock Style="{StaticResource Caption}" FontSize="11" Text="Pressione Enter ou clique em Buscar." Margin="0,8,0,14"/>
+            <WrapPanel><Button x:Name="CyberpunkSuggestion" Content="Cyberpunk 2077" FontSize="11" Padding="11,9" Margin="0,0,8,8"/><Button x:Name="EldenSuggestion" Content="Elden Ring" FontSize="11" Padding="11,9" Margin="0,0,8,8"/><Button x:Name="StardewSuggestion" Content="Stardew Valley" FontSize="11" Padding="11,9" Margin="0,0,0,8"/></WrapPanel>
+            <TextBlock x:Name="Status" Style="{StaticResource Caption}" Foreground="{StaticResource Accent}" Margin="0,10,0,6" AutomationProperties.LiveSetting="Polite"/>
+            <StackPanel x:Name="SearchResults"/>
+            <Border x:Name="EmptyState" Padding="12,28,12,20"><StackPanel><TextBlock Text="Encontre seu próximo jogo" FontSize="18" HorizontalAlignment="Center"/><TextBlock Style="{StaticResource Caption}" Text="Use a busca ou escolha uma sugestão para começar." TextAlignment="Center" Margin="0,10,0,0"/></StackPanel></Border>
+          </StackPanel></Border>
+          <Border x:Name="GameCard" Style="{StaticResource Card}" Margin="0,18,0,0" Visibility="Collapsed"><StackPanel>
+            <TextBlock Text="JOGO SELECIONADO" Foreground="{StaticResource Accent}" FontSize="11" Margin="0,0,0,10"/>
+            <TextBlock x:Name="GameTitle" FontSize="25" FontWeight="SemiBold"/>
+            <TextBlock x:Name="GameDate" Style="{StaticResource Caption}" FontSize="11" Margin="0,6,0,14"/>
+            <WrapPanel><Button x:Name="MinimumButton" Content="Mínimos" Margin="0,0,8,8"/><Button x:Name="RecommendedButton" Content="Recomendados" Margin="0,0,8,8"/><Button x:Name="SourceButton" Content="Ver na Steam ↗" Margin="0,0,0,8"/></WrapPanel>
+            <TextBlock x:Name="RequirementsHint" Style="{StaticResource Caption}" Margin="0,6,0,8"/>
+            <Expander Header="Ver requisitos publicados pela Steam" FontSize="12" Margin="0,8,0,0"><TextBlock x:Name="RequirementsText" Style="{StaticResource Caption}" Margin="0,12,0,0"/></Expander>
+          </StackPanel></Border>
+          <Border x:Name="AnalysisCard" Style="{StaticResource Card}" Margin="0,18,0,0" Visibility="Collapsed"><StackPanel>
+            <TextBlock Text="A COMPARAÇÃO, PEÇA POR PEÇA" Foreground="{StaticResource Accent}" FontSize="11" Margin="0,0,0,12"/>
+            <TextBlock x:Name="Verdict" FontSize="24" FontWeight="SemiBold"/>
+            <TextBlock x:Name="AnalysisHint" Style="{StaticResource Caption}" Margin="0,10,0,16"/>
+            <StackPanel x:Name="ComparisonList"/>
+            <Expander Header="Como interpretar este resultado" FontSize="12" Margin="0,18,0,0"><TextBlock Style="{StaticResource Caption}" Margin="0,10,0,0" Text="RAM e espaço são comparados pela quantidade. Processador e placa de vídeo só são aprovados quando o modelo coincide com um requisito explícito; modelos diferentes ficam pendentes. Windows, DirectX e recursos gráficos precisam de revisão. Não estimamos FPS."/></Expander>
+          </StackPanel></Border>
+          <Border x:Name="UpgradeCard" Style="{StaticResource Card}" Margin="0,18,0,0" Visibility="Collapsed"><StackPanel>
+            <TextBlock Text="Seu próximo passo" FontSize="20" FontWeight="SemiBold"/>
+            <TextBlock x:Name="UpgradeText" Style="{StaticResource Caption}" Margin="0,10,0,16"/>
+            <WrapPanel x:Name="ShopButtons"/>
+            <TextBlock Style="{StaticResource Caption}" FontSize="11" Margin="0,14,0,0" Text="Links de pesquisa, sem preços ou compatibilidade de compra verificados. Antes de comprar, confira fonte, conectores, gabinete, placa-mãe, vendedor e garantia."/>
+          </StackPanel></Border>
+        </StackPanel>
+      </ScrollViewer>
+    </Grid>
+    <TextBlock Grid.Row="2" Text="MeuPcRoda 1.0  ·  Código aberto (MIT)  ·  Sem garantia de desempenho" Foreground="#8591A2" FontSize="11" Margin="28,0" VerticalAlignment="Center"/>
+  </Grid>
+</Window>

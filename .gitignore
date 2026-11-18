@@ -1,0 +1,11 @@
+*.log
+.env
+release/
+bin/
+obj/
+.vs/
+testes*.json
+verificacao*.json
+integracao*.json
+desempenho.json
+BUILD-INFO.json
